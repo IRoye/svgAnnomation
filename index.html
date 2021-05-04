@@ -1,0 +1,76 @@
+<!--
+ * @Descripttion: SVG大屏 动画 边框
+ * @Author: yuyi
+ * @Date: 2021-05-04 12:49:14
+ * @LastEditors: yuyi
+ * @LastEditTime: 2021-05-04 14:58:10
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+</head>
+<div class="container">
+    <!-- 宽，高，就是svg的画布大小 -->
+    <svg width="1920px" height="500px">
+        <path d="M 0 20
+                 L 384 20
+                 L 400 40
+                 L 768 40
+                 L 784 70
+                 L 1166 70
+                 L 1176 52
+                 L 1920 52" fill="#1d1f21" stroke="#0d6993" stroke-width="3" />
+        <path d="M 0 20
+                 L 384 20
+                 L 400 40
+                 L 768 40
+                 L 784 70
+                 L 1166 70
+                 L 1176 52
+                 L 1920 52" fill="transparent" stroke="#00ffff" stroke-width="3" class="line">
+        </path>
+    </svg>
+</div>
+
+<body>
+
+</body>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #1d1f21;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    svg{
+        width: 1920;
+    }
+
+    svg .line {
+        stroke-dasharray: 1960 1960;
+        stroke-dashoffset: 1960;
+        animation: dash 10s linear alternate;
+    }
+
+    @keyframes dash {
+        from {
+            stroke-dashoffset: 1960;
+        }
+
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+</style>
+
+</html>
